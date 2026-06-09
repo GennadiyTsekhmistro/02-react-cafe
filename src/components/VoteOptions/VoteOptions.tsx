@@ -1,7 +1,6 @@
 import css from "./VoteOptions.module.css";
 
-// Local type to avoid module resolution issues with ../../types/votes
-type VoteType = "good" | "neutral" | "bad";
+import type { VoteType } from "../../types/votes";
 
 interface VoteOptionsProps {
   onVote: (type: VoteType) => void;

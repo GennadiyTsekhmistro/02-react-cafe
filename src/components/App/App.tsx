@@ -5,8 +5,7 @@ import VoteOptions from "../VoteOptions/VoteOptions";
 import VoteStats from "../VoteStats/VoteStats";
 import Notification from "../Notification/Notification";
 
-type VoteType = "good" | "neutral" | "bad";
-type Votes = Record<VoteType, number>;
+import type { VoteType, Votes } from "../../types/votes";
 
 export default function App() {
   const [votes, setVotes] = useState<Votes>({
@@ -16,7 +15,7 @@ export default function App() {
   });
 
   const handleVote = (type: VoteType) => {
-    setVotes((prev) => ({
+    setVotes((prev: Votes) => ({
       ...prev,
       [type]: prev[type] + 1,
     }));
